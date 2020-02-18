@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [Sales].[CountryRegionCurrency] (
-    [CountryRegionCode] NVARCHAR (3) NOT NULL,
-    [CurrencyCode]      NCHAR (3)    NOT NULL,
+    [CountryRegionCode] NVARCHAR (3)  NULL,
+    [CurrencyCode]      NCHAR (3)     NULL,
     [ModifiedDate]      DATETIME     CONSTRAINT [DF_CountryRegionCurrency_ModifiedDate] DEFAULT (getdate()) NOT NULL,
     CONSTRAINT [PK_CountryRegionCurrency_CountryRegionCode_CurrencyCode] PRIMARY KEY CLUSTERED ([CountryRegionCode] ASC, [CurrencyCode] ASC),
     CONSTRAINT [FK_CountryRegionCurrency_CountryRegion_CountryRegionCode] FOREIGN KEY ([CountryRegionCode]) REFERENCES [Person].[CountryRegion] ([CountryRegionCode]),
